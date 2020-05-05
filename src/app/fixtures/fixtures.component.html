@@ -1,0 +1,56 @@
+<h1 style="text-align: center;">Fixtures</h1>
+<button class="btn btn-primary" style="float:right" (click)="onBack()">Back</button>
+<hr>
+<div class="row">
+  <div class="col-xs-12">
+      <a href="#" class="list-group-item clearfix" *ngFor="let fixture of fixtures">
+          <div class="pull-left">
+              <h4 class="list-group-item-heading">{{fixture.team}}</h4>
+              <p class="list-group-item-text">{{fixture.time}}</p>
+              <p class="list-group-item-text">{{fixture.field}}</p>
+          </div>
+          <span class="pull-right">
+            <button type="button" mdbBtn color="success" rounded="true" size="sm" class="my-0" (click)="onView()">View</button>
+            <p class="list-group-item-text">{{fixture.score}}</p>
+          </span>
+      </a>
+  </div>
+</div>
+
+<!-- <table mdbTable small="true">
+    <thead>
+      <tr>
+        <th *ngFor="let head of headElements" scope="col">{{head}} </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr mdbTableCol *ngFor="let el of elements">
+        <td scope="row">{{el.time}}</td>
+        <td>{{el.team}}</td>
+        <td>{{el.field}}</td>
+        <td>{{el.score}}</td>
+        <td>
+            <span class="table-view">
+              <button type="button" mdbBtn color="success" rounded="true" size="sm" class="my-0" (click)="onView()">View</button>
+            </span>
+          </td>
+      </tr>
+    </tbody>
+  </table> -->
+
+  <table mdbTable responsive="true">
+    <thead>
+      <tr>
+        <th *ngFor="let head of headElements" scope="col">{{head}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr mdbTableCol *ngFor="let el of elements">
+        <th scope="row">{{el.id}}</th>
+        <td>{{el.heading1}}</td>
+        <td>{{el.heading2}}</td>
+        <td>{{el.heading3}}</td>
+        <td>{{el.heading4}}</td>
+      </tr>
+    </tbody>
+  </table>

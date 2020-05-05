@@ -1,0 +1,32 @@
+
+#footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+.btn-secondary{
+  font-size: smaller;
+  display: inline-block; 
+  width: 49%; 
+  white-space: normal;
+}
+
+#page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+#content-wrap {
+  padding-bottom: 2.5rem;    /* Footer height */
+}
+
+h1{
+  font-family: Tornac;
+  color: #026873;
+}
+
+.btn-primary{
+  background-color: #026873 !important;
+}

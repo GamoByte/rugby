@@ -1,0 +1,15 @@
+<table mdbTable small="true">
+    <thead>
+      <tr>
+        <th *ngFor="let head of headElements" scope="col">{{head}} </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr mdbTableCol *ngFor="let el of elements">
+        <td scope="row">{{el.first}}</td>
+        <td>{{el.second}}</td>
+        <td>{{el.third}}</td>
+        <td>{{el.fourth}}</td>
+      </tr>
+    </tbody>
+  </table>
