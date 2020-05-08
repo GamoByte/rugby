@@ -1,5 +1,5 @@
 import { Component, NgModule } from '@angular/core';
-import { Fixtures } from './fixtures.model';
+import { Fixtures } from '../model/fixtures.model';
 import { Router } from '@angular/router';
 // import { CommonModule } from '@angular/common';
 
@@ -15,22 +15,16 @@ import { Router } from '@angular/router';
 
 export class FixturesComponent{
     fixtures: Fixtures[] =[
-        new Fixtures('08:00','14A','Field B','-'),
-        new Fixtures('08:00','15B','Field A','-')
+        new Fixtures('08:00','14A','Field B','-','https://www.idp-apps.com/wp-content/uploads/2020/04/Saints-Logo-2.png','https://www.idp-apps.com/wp-content/uploads/2020/04/Uplands-College-2.png'),
+        new Fixtures('08:00','15B','Field A','-','https://www.idp-apps.com/wp-content/uploads/2020/04/Saints-Logo-2.png','https://www.idp-apps.com/wp-content/uploads/2020/04/download-2.jpeg'),
+        new Fixtures('08:00','16C','Field C','-','https://www.idp-apps.com/wp-content/uploads/2020/04/Uplands-College-2.png','https://www.idp-apps.com/wp-content/uploads/2020/04/Saints-Logo-2.png'),
+        new Fixtures('09:00','3rd','Baytopp','-','https://www.idp-apps.com/wp-content/uploads/2020/04/Saints-Logo-2.png','https://www.idp-apps.com/wp-content/uploads/2020/04/download-2.jpeg'),
+        new Fixtures('09:00','1st','Field A','-','https://www.idp-apps.com/wp-content/uploads/2020/04/Uplands-College-2.png','https://www.idp-apps.com/wp-content/uploads/2020/04/84121234_127100395501546_225989148912123904_n-2.png'),
     ];
 
     constructor(private goBack:Router, public router:Router){}
 
-    elements: any = [
-        {time: '08:00', team: '14A', field: 'Field B', score: '-'},
-        {time: '08:00', team: '15B', field: 'Field A', score: '-'},
-        {time: '09:00', team: '16A', field: 'Baytopp', score: '-'},
-        {time: '10:00', team: '2nd XV', field: 'Baytopp', score: '-'},
-        {time: '11:00', team: '1st XV', field: 'Baytopp', score: '-'},
-      ];
-    
-      headElements = ['Time', 'Team', 'Field', 'Score'];
-    
+   
     onBack(){
         this.goBack.navigate(['/'])
     }

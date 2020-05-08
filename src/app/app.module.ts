@@ -12,10 +12,14 @@ import { WarningComponent } from './notifications/warning/warning.component';
 import { SuccessComponent } from './notifications/success/success.component';
 import { FixturesComponent } from './fixtures/fixtures.component';
 import { CommonModule } from '@angular/common';
+import { TeamsComponent } from './teams/teams.component';
+import { TeamviewComponent } from './teams/teamview/teamview.component';
 
 const appRoutes : Routes = [
   {path: '', component: HomeComponent},
   {path: 'fixtures', component: FixturesComponent},
+  {path: 'teams', component: TeamsComponent},
+  {path: 'teamview', component: TeamviewComponent},
   // {path: "**",redirectTo:"welcome"}
 ]
 
@@ -27,7 +31,9 @@ const appRoutes : Routes = [
     BraaiComponent,
     WarningComponent,
     SuccessComponent,
-    FixturesComponent
+    FixturesComponent,
+    TeamsComponent,
+    TeamviewComponent
   ],
   imports: [
     BrowserModule,

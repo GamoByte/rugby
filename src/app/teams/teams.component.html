@@ -1,0 +1,24 @@
+<h1 style="text-align: center;">Teams
+    <button class="btn btn-primary" style="float:right; margin-top: 1em;" (click)="onBack()">Back</button></h1>
+  <hr>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12">
+        <div class="row" *ngFor="let team of teams" style="border: 1px solid #888888;">
+          <div class="col-md-4" style="width: 25%;">
+            <h4 class="list-group-item-heading">{{team.team}}</h4>
+            <p class="list-group-item-text">{{team.group}}</p>
+            <p class="list-group-item-text">{{team.organisation}}</p>
+          </div>
+          <div class="col-md-4" style="width: 50%;text-align: center;">
+            <br> 
+            <a><img [src]="team.teamimg" alt="TeamImg" class="img-responsive" style="max-height: 50px;"></a>
+          </div>
+          <div class="col-md-4" style="width: 25%; text-align:right">
+            <br>
+            <button class="btn btn-primary btn-block" style="margin-bottom: 1rem;" routerLink="/teamview">View</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
