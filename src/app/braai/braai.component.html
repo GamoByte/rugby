@@ -1,4 +1,4 @@
-<table mdbTable small="true">
+<!-- <table mdbTable small="true">
     <thead>
       <tr>
         <th *ngFor="let head of headElements" scope="col">{{head}} </th>
@@ -12,14 +12,40 @@
         <td>{{el.fourth}}</td>
       </tr>
     </tbody>
-  </table>
-
-  <!-- <div class="container">
+  </table> -->
+  <div class="container-fluid">
     <div class="row">
-    <div class="col-xs-6 col-sm-4 col-md-4">Column A</div>
-    <div class="col-xs-6 col-sm-4 col-md-4">Column B</div>
-    <div class="col-xs-6 col-sm-4 col-md-4">Column C</div>
-    <div class="col-xs-6 col-sm-4 col-md-4">Column D</div>
-    <div class="col-xs-6 col-sm-4 col-md-4">Column E</div>
-    <div class="col-xs-6 col-sm-4 col-md-4">Column F</div>
-</div> -->
+      <div class="col-12">
+        <div class="row" *ngFor="let braai of braaiers" style="border: 1px solid #888888;">
+          <div class="col-md-3" style="width: 25%;text-align: center;">
+            <p class="list-group-item-heading">{{braai.time}}</p>
+            <p class="list-group-item-text">{{braai.slot1}}</p>
+            <p class="list-group-item-text">{{braai.slot2}}</p>
+            <p class="list-group-item-text">{{braai.slot3}}</p>
+            <p class="list-group-item-text">{{braai.slot4}}</p>
+          </div>
+          <div class="col-md-3" style="width: 25%;text-align: center;">
+            <p class="list-group-item-heading">{{braai.time}}</p>
+            <p class="list-group-item-text">{{braai.slot1}}</p>
+            <p class="list-group-item-text">{{braai.slot2}}</p>
+            <p class="list-group-item-text">{{braai.slot3}}</p>
+            <p class="list-group-item-text">{{braai.slot4}}</p>
+          </div>
+          <div class="col-md-3" style="width: 25%;text-align: center;">
+            <p class="list-group-item-heading">{{braai.time}}</p>
+            <p class="list-group-item-text">{{braai.slot1}}</p>
+            <p class="list-group-item-text">{{braai.slot2}}</p>
+            <p class="list-group-item-text">{{braai.slot3}}</p>
+            <p class="list-group-item-text">{{braai.slot4}}</p>
+          </div>
+          <div class="col-md-3" style="width: 25%; text-align:center">
+            <p class="list-group-item-heading">{{braai.time}}</p>
+            <p class="list-group-item-text">{{braai.slot1}}</p>
+            <p class="list-group-item-text">{{braai.slot2}}</p>
+            <p class="list-group-item-text">{{braai.slot3}}</p>
+            <p class="list-group-item-text">{{braai.slot4}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Braaiers } from '../model/braai.model';
+
 
 @Component({
   selector: 'app-braai',
@@ -7,12 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BraaiComponent implements OnInit {
 
-  elements: any = [
-    {first: '-', second: '-', third: '-', fourth: '-'},
-    {first: '-', second: '-', third: '-', fourth: '-'},
-    {first: '-', second: '-', third: '-', fourth: '-'},
-    {first: '-', second: '-', third: '-', fourth: '-'},
-    {first: '-', second: '-', third: '-', fourth: '-'},
+  braaiers: Braaiers[] = [
+    // new Braaiers('08:00-09:30','-','-','-','-'),
+    // new Braaiers('09:00-10:30','-','-','-','-'),
+    // new Braaiers('10:00-11:30','-','-','-','-'),
+    new Braaiers('11:00-12:30','Adriaanus Quintessential','2','3','4'),
+    new Braaiers('10:00-11:30','Riette Nothnagel','-','-','-'),
   ];
 
   headElements = ['08:00-09:30', '09:00-10:30', '10:00-11:30', '11:00-12:30'];

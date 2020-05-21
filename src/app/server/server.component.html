@@ -1,4 +1,4 @@
-<table mdbTable small="true">
+<!-- <table mdbTable small="true">
     <thead>
       <tr>
         <th *ngFor="let head of headElements" scope="col">{{head}} </th>
@@ -9,8 +9,43 @@
         <td scope="row">{{el.first}}</td>
         <td>{{el.second}}</td>
         <td>{{el.third}}</td>
-        <td>{{el.fourth}}</td>
-        
+        <td>{{el.fourth}}</td>        
       </tr>
     </tbody>
-  </table>
+  </table> -->
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12">
+        <div class="row" *ngFor="let server of servers" style="border: 1px solid #888888;">
+          <div class="col-md-3" style="width: 25%;text-align: center;">
+            <p class="list-group-item-heading">{{server.time}}</p>
+            <p class="list-group-item-text">{{server.slot1}}</p>
+            <p class="list-group-item-text">{{server.slot2}}</p>
+            <p class="list-group-item-text">{{server.slot3}}</p>
+            <p class="list-group-item-text">{{server.slot4}}</p>
+          </div>
+          <div class="col-md-3" style="width: 25%;text-align: center;">
+            <p class="list-group-item-heading">{{server.time}}</p>
+            <p class="list-group-item-text">{{server.slot1}}</p>
+            <p class="list-group-item-text">{{server.slot2}}</p>
+            <p class="list-group-item-text">{{server.slot3}}</p>
+            <p class="list-group-item-text">{{server.slot4}}</p>
+          </div>
+          <div class="col-md-3" style="width: 25%;text-align: center;">
+            <p class="list-group-item-heading">{{server.time}}</p>
+            <p class="list-group-item-text">{{server.slot1}}</p>
+            <p class="list-group-item-text">{{server.slot2}}</p>
+            <p class="list-group-item-text">{{server.slot3}}</p>
+            <p class="list-group-item-text">{{server.slot4}}</p>
+          </div>
+          <div class="col-md-3" style="width: 25%; text-align:center">
+            <p class="list-group-item-heading">{{server.time}}</p>
+            <p class="list-group-item-text">{{server.slot1}}</p>
+            <p class="list-group-item-text">{{server.slot2}}</p>
+            <p class="list-group-item-text">{{server.slot3}}</p>
+            <p class="list-group-item-text">{{server.slot4}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
