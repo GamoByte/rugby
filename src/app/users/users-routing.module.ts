@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { LayoutComponent } from './container.component';
-import { ListComponent } from './list/listusers.component';
+import { UsrContainerComponent } from './container.component';
+import { ListUsersComponent } from './list/listusers.component';
 import { AddEditComponent } from './addedit/addedit.component';
 
 const routes: Routes = [
     {
-        path: '', component: LayoutComponent,
+        path: '', component: UsrContainerComponent,
         children: [
-            { path: '', component: ListComponent },
+            { path: '', component: ListUsersComponent },
             { path: 'add', component: AddEditComponent },
             { path: 'edit/:id', component: AddEditComponent }
         ]

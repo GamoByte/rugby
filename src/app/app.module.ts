@@ -1,15 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
-import { Routes, RouterModule } from '@angular/router';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { ServerComponent} from './server/server.component';
 import { BraaiComponent } from './braai/braai.component';
-import { WarningComponent } from './notifications/warning/warning.component';
-import { SuccessComponent } from './notifications/success/success.component';
 import { FixturesComponent } from './fixtures/fixtures.component';
 import { CommonModule } from '@angular/common';
 import { TeamsComponent } from './teams/teams.component';
@@ -19,17 +16,12 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatTableModule } from '@angular/material/table';
 import { UsersComponent } from './users/users.component';
-import { RegisterComponent } from './users/register/register.component';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './account/login/login.component';
+import { UsersModule } from './users/users.module';
+import { JwtInterceptor, ErrorInterceptor, fakeBackendProvider } from './helpers';
+import { AppRoutingModule } from './app-routing.module';
+import { AlertComponent } from './notifications/alert.component';
 
-const appRoutes : Routes = [
-  {path: '', component: HomeComponent},
-  {path: 'fixtures', component: FixturesComponent},
-  {path: 'teams', component: TeamsComponent},
-  {path: 'teamview', component: TeamviewComponent},
-  {path: 'login', component: LoginComponent},
-  // {path: "**",redirectTo:"welcome"}
-]
 
 @NgModule({
   declarations: [
@@ -37,28 +29,34 @@ const appRoutes : Routes = [
     HomeComponent,
     ServerComponent,
     BraaiComponent,
-    WarningComponent,
-    SuccessComponent,
     FixturesComponent,
     TeamsComponent,
     TeamviewComponent,
     UsersComponent,
-    RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    UsersComponent,
+    UsersModule,
+    AlertComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
-    RouterModule.forRoot(appRoutes),
+    AppRoutingModule,
+    FormsModule,
     CommonModule,
     BrowserAnimationsModule,
     MatButtonModule,
     MatFormFieldModule,
     MatTableModule,
-    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+
+        // provider used to create fake backend
+        fakeBackendProvider
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

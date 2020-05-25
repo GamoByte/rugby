@@ -4,7 +4,7 @@ import { first } from 'rxjs/operators';
 import { AccountService } from 'src/app/services';
 
 @Component({ templateUrl: 'listusers.component.html' })
-export class ListComponent implements OnInit {
+export class ListUsersComponent implements OnInit {
     users = null;
 
     constructor(private accountService: AccountService) {}
