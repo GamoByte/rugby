@@ -4,11 +4,11 @@ import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { environment } from 'src/environments/environment';
-import { User } from '../model/user.model';
+import { environment } from '../../environments/environment';
+import { User } from '../model';
 
 @Injectable({ providedIn: 'root' })
-export class AccountService {
+export class AuthenticationService {
     private userSubject: BehaviorSubject<User>;
     public user: Observable<User>;
 
@@ -24,8 +24,8 @@ export class AccountService {
         return this.userSubject.value;
     }
 
-    login(username, password) {
-        return this.http.post<User>(`${environment.apiUrl}/users/authenticate`, { username, password })
+    login(username: string, password: string) {
+        return this.http.post<any>(`${environment.apiUrl}/users/authenticate`, { username, password })
             .pipe(map(user => {
                 // store user details and jwt token in local storage to keep user logged in between page refreshes
                 localStorage.setItem('user', JSON.stringify(user));
@@ -35,12 +35,12 @@ export class AccountService {
     }
 
     logout() {
-        // remove user from local storage and set current user to null
+        // remove user from local storage to log user out
         localStorage.removeItem('user');
         this.userSubject.next(null);
-        this.router.navigate(['/account/login']);
+        this.router.navigate(['/login']);
     }
-
+    
     register(user: User) {
         return this.http.post(`${environment.apiUrl}/users/register`, user);
     }
@@ -69,7 +69,7 @@ export class AccountService {
             }));
     }
 
-    delete(id: string) {
+    delete(id: number) {
         return this.http.delete(`${environment.apiUrl}/users/${id}`)
             .pipe(map(x => {
                 // auto logout if the logged in user deleted their own record

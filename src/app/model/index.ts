@@ -4,3 +4,4 @@ export * from './fixtures.model';
 export * from './server.model';
 export * from './teams.model';
 export * from './user.model';
+export * from './role.model';

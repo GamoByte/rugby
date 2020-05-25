@@ -3,9 +3,10 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 
-import { AccountService, AlertService } from 'src/app/services';
+import { AlertService, AuthenticationService } from 'src/app/services';
 
-@Component({ templateUrl: 'addedit.component.html' })
+@Component({ templateUrl: 'addedit.component.html',
+    styleUrls: ['./addedit.component.scss'] })
 export class AddEditComponent implements OnInit {
     form: FormGroup;
     id: string;
@@ -17,7 +18,7 @@ export class AddEditComponent implements OnInit {
         private formBuilder: FormBuilder,
         private route: ActivatedRoute,
         private router: Router,
-        private accountService: AccountService,
+        private authService: AuthenticationService,
         private alertService: AlertService
     ) {}
 
@@ -39,7 +40,7 @@ export class AddEditComponent implements OnInit {
         });
 
         if (!this.isAddMode) {
-            this.accountService.getById(this.id)
+            this.authService.getById(this.id)
                 .pipe(first())
                 .subscribe(x => {
                     this.f.firstName.setValue(x.firstName);
@@ -72,7 +73,7 @@ export class AddEditComponent implements OnInit {
     }
 
     private createUser() {
-        this.accountService.register(this.form.value)
+        this.authService.register(this.form.value)
             .pipe(first())
             .subscribe(
                 data => {
@@ -86,7 +87,7 @@ export class AddEditComponent implements OnInit {
     }
 
     private updateUser() {
-        this.accountService.update(this.id, this.form.value)
+        this.authService.update(this.id, this.form.value)
             .pipe(first())
             .subscribe(
                 data => {

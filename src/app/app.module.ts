@@ -15,9 +15,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatTableModule } from '@angular/material/table';
-import { UsersComponent } from './users/users.component';
-import { LoginComponent } from './account/login/login.component';
-import { UsersModule } from './users/users.module';
 import { JwtInterceptor, ErrorInterceptor, fakeBackendProvider } from './helpers';
 import { AppRoutingModule } from './app-routing.module';
 import { AlertComponent } from './notifications/alert.component';
@@ -32,18 +29,14 @@ import { AlertComponent } from './notifications/alert.component';
     FixturesComponent,
     TeamsComponent,
     TeamviewComponent,
-    UsersComponent,
-    LoginComponent,
-    UsersComponent,
-    UsersModule,
     AlertComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
     AppRoutingModule,
-    FormsModule,
     CommonModule,
     BrowserAnimationsModule,
     MatButtonModule,

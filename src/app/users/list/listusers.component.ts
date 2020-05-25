@@ -1,24 +1,24 @@
 import { Component, OnInit } from '@angular/core';
 import { first } from 'rxjs/operators';
 
-import { AccountService } from 'src/app/services';
+import {  AuthenticationService } from '../../services';
 
 @Component({ templateUrl: 'listusers.component.html' })
 export class ListUsersComponent implements OnInit {
     users = null;
 
-    constructor(private accountService: AccountService) {}
+    constructor(private authService: AuthenticationService) {}
 
     ngOnInit() {
-        this.accountService.getAll()
+        this.authService.getAll()
             .pipe(first())
             .subscribe(users => this.users = users);
     }
 
-    deleteUser(id: string) {
+    deleteUser(id: number) {
         const user = this.users.find(x => x.id === id);
         user.isDeleting = true;
-        this.accountService.delete(id)
+        this.authService.delete(id)
             .pipe(first())
             .subscribe(() => {
                 this.users = this.users.filter(x => x.id !== id) 
