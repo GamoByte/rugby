@@ -1,16 +1,29 @@
-td{
-    text-align: center;
-    white-space: normal;
-    border-left: solid;
-    border-left-style: inset;
-}
-th{
-    border-left: solid;
-    border-left-style: inset;
-}
+// td{
+//     text-align: center;
+//     white-space: normal;
+//     border-left: solid;
+//     border-left-style: inset;
+//     height: 20px;
+// }
+// th{
+//     border-left: solid;
+//     border-left-style: inset;
+// }
 
 p{
     margin-bottom: 0rem;
     border-bottom-style: inset;
     font-size: small;
+}
+
+tr.mat-row, tr.mat-footer-row {
+    border: 1px solid #e7e7e7;
+    font-weight: bold;
+    height: 25px !important;
+}
+
+th.mat-header-cell {
+    text-align: center;
+    font-weight: bolder;
+    font-size: medium;
 }

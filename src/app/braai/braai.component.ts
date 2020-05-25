@@ -1,6 +1,7 @@
 import { Component, OnInit, NgModule } from '@angular/core';
 import { Braaiers } from '../model/braai.model';
 
+
 export interface BraaiElement {
   name: string;
   position: string;
@@ -36,19 +37,6 @@ export class BraaiComponent implements OnInit {
   removeColumn() {
     if (this.columnsToDisplay.length) {
       this.columnsToDisplay.pop();
-    }
-  }
-
-  shuffle() {
-    let currentIndex = this.columnsToDisplay.length;
-    while (0 !== currentIndex) {
-      let randomIndex = Math.floor(Math.random() * currentIndex);
-      currentIndex -= 1;
-
-      // Swap
-      let temp = this.columnsToDisplay[currentIndex];
-      this.columnsToDisplay[currentIndex] = this.columnsToDisplay[randomIndex];
-      this.columnsToDisplay[randomIndex] = temp;
     }
   }
 
