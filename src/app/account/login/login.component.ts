@@ -11,6 +11,7 @@ export class LoginComponent implements OnInit {
     loading = false;
     submitted = false;
     returnUrl: string;
+    error = '';
 
     constructor(
         private formBuilder: FormBuilder,
@@ -19,10 +20,10 @@ export class LoginComponent implements OnInit {
         private authService: AuthenticationService,
         private alertService: AlertService
     ) {
-        // redirect to home if already logged in
-        if (this.authService.userValue) { 
-            this.router.navigate(['/']);
-        }
+        // // redirect to home if already logged in
+        // if (this.authService.userValue) { 
+        //     this.router.navigate(['/']);
+        // }
      }
 
     ngOnInit() {

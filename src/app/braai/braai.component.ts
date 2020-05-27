@@ -25,8 +25,10 @@ const ELEMENT_DATA: BraaiElement[] = [
 })
 export class BraaiComponent implements OnInit {
 
-  displayedColumns: string[] = ['08:00-09:30', '09:00-10:30', '10:00-11:30', '11:00-12:30'];
+  displayedColumns: string[] = ['name', 'weight', 'symbol', 'position'];
+  columnHeader: string[] = ['08:00-09:30', '09:00-10:30', '10:00-11:30', '11:00-12:30'];
   columnsToDisplay: string[] = this.displayedColumns.slice();
+  displayColumnHeader: string[] = this.columnHeader.slice();
   data: BraaiElement[] = ELEMENT_DATA;
 
   addColumn() {

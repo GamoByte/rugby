@@ -20,10 +20,19 @@ tr.mat-row, tr.mat-footer-row {
     border: 1px solid #e7e7e7;
     font-weight: bold;
     height: 25px !important;
+    text-align: center;
 }
 
 th.mat-header-cell {
     text-align: center;
     font-weight: bolder;
     font-size: medium;
+}
+
+th.mat-header-cell:first-of-type, td.mat-cell:first-of-type, td.mat-footer-cell:first-of-type {
+     padding-left: 2px;
+}
+
+th.mat-header-cell:last-of-type, td.mat-cell:last-of-type, td.mat-footer-cell:last-of-type {
+    padding-right: 2px;
 }
